@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>인예의 Wordcount하트</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <!--폰트-->
+   
+    <style>
+        h1{
+            font-family: 'Sunflower', sans-serif;
+            color: #f75c5c;
+            font-size:50px;
+            
+
+        }
+        
+        body{
+            background-image: url("./image/main_mutsa.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+<h1>인예의 짱짱 멋진 wordcount</h1>
+<br>
+
+<a href="{% url 'about' %}"><button type="button" class="btn btn-danger">ABOUT</button></a>
+<br>
+<br>
+
+<form action="{% url 'result' %}">
+
+    <textarea cols="40" rows="10" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="Count">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>인예의 Wordcount하트</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+    <!--폰트-->
+   
+    <style>
+        h1{
+            font-family: 'Sunflower', sans-serif;
+            color: #f75c5c;
+            font-size:50px;
+            
+
+        }
+        h2{
+            font-family: 'Sunflower', sans-serif;
+            color: #fd9c9c;
+            font-size:40px;
+        }
+        
+        body{
+            background-image: url("./image/main_mutsa.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<h1> 당신이 입력한 텍스트는 {{total}}개로 구성되어 있습니다.</h1>
+
+<a href="{% url 'home' %}"><button type="button" class="btn btn-danger">다시하기</button></a>
+<br>
+<br>
+<h2> 입력한 텍스트: </h2>
+{{full}}
+<br>
+<h2> 단어 카운트: </h2>
+
+{% for word, howmany in dic %}
+
+{{word}} : {{howmany}}
+<br>
+
+{%endfor%}
